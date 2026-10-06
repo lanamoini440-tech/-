@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>التقوى</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#fbf7ee;
+  --surface:#ffffff;
+  --ink:#1d2b28;
+  --muted:#58685f;
+  --line:#e8e0cc;
+  --emerald:#0e6b57;
+  --emerald-deep:#0a4a3d;
+  --gold:#e5ae3a;
+  --verse-bg:#fff6dc;
+  --verse-ink:#4a3a0b;
+  --c1:#0e6b57; --c1s:#e2f5ee;
+  --c2:#c2410c; --c2s:#fdebdf;
+  --c3:#6d28d9; --c3s:#efe8fd;
+  --c4:#0369a1; --c4s:#e0f2fd;
+  --c5:#be185d; --c5s:#fde6f0;
+  --c6:#4d7c0f; --c6s:#eaf5d6;
+  --c7:#b45309; --c7s:#fdf0d5;
+  --good:#12805c; --good-s:#dcf6ea;
+  --bad:#c0392b; --bad-s:#fde4e1;
+  --shadow:0 10px 30px rgba(14,60,50,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1a17; --surface:#16262c; --ink:#eef3ef; --muted:#a9bdb4; --line:#2a3f3a;
+    --verse-bg:#2a2410; --verse-ink:#f6e3a6;
+    --c1:#5fd3b3; --c1s:#143a31;
+    --c2:#ff9a66; --c2s:#40220f;
+    --c3:#b59cff; --c3s:#2a1f4d;
+    --c4:#6cc6f5; --c4s:#0f3047;
+    --c5:#ff8cbc; --c5s:#4a1830;
+    --c6:#aee06a; --c6s:#26380f;
+    --c7:#f4b860; --c7s:#40290b;
+    --good:#58d9a6; --good-s:#133b2c;
+    --bad:#ff8a7a; --bad-s:#4a1a15;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1a17; --surface:#16262c; --ink:#eef3ef; --muted:#a9bdb4; --line:#2a3f3a;
+  --verse-bg:#2a2410; --verse-ink:#f6e3a6;
+  --c1:#5fd3b3; --c1s:#143a31;
+  --c2:#ff9a66; --c2s:#40220f;
+  --c3:#b59cff; --c3s:#2a1f4d;
+  --c4:#6cc6f5; --c4s:#0f3047;
+  --c5:#ff8cbc; --c5s:#4a1830;
+  --c6:#aee06a; --c6s:#26380f;
+  --c7:#f4b860; --c7s:#40290b;
+  --good:#58d9a6; --good-s:#133b2c;
+  --bad:#ff8a7a; --bad-s:#4a1a15;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+  font-size:18px;line-height:1.9;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+/* ---------- top nav ---------- */
+nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  background:rgba(251,247,238,.94);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;gap:6px;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px}
+nav .links{display:flex;gap:6px;overflow-x:auto}
+nav a{
+  text-decoration:none;color:var(--ink);font-weight:700;font-size:15px;
+  padding:6px 14px;border-radius:999px;white-space:nowrap;
+}
+nav a:hover,nav a:focus-visible{background:var(--c1s);color:var(--c1);outline:none}
+:root[data-theme="dark"] nav{background:rgba(14,26,23,.94)}
+nav a.quiz-link{background:var(--gold);color:#3b2a00}
+.theme-btn{
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:17px;flex:none;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#fff;text-align:center;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(229,174,58,.35),transparent 45%),
+    radial-gradient(circle at 85% 90%,rgba(95,211,179,.30),transparent 50%),
+    linear-gradient(160deg,#0a4a3d 0%,#0e6b57 55%,#128a6f 100%);
+  padding:56px 18px 70px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;opacity:.13;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='white' stroke-width='1.4'><rect x='20' y='20' width='40' height='40'/><rect x='20' y='20' width='40' height='40' transform='rotate(45 40 40)'/><circle cx='40' cy='40' r='9'/></g></svg>");
+  background-size:80px 80px;
+}
+.hero > *{position:relative}
+.bismillah{font-family:"Amiri",serif;font-size:26px;color:#ffe9a8;margin:0 0 14px}
+.hero h1{
+  font-family:"Amiri",serif;font-weight:700;
+  font-size:clamp(40px,9vw,72px);line-height:1.25;margin:0 0 10px;
+}
+.hero .sub{font-size:20px;margin:0 auto;max-width:560px;color:#e3f6ef}
+.ayah-hero{
+  display:inline-block;margin:26px auto 0;padding:14px 26px;border-radius:18px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,233,168,.5);
+  font-family:"Amiri",serif;font-size:clamp(22px,4.5vw,30px);color:#fff3c9;line-height:2;
+}
+.ayah-hero small{display:block;font-family:"Tajawal",sans-serif;font-size:14px;color:#cfeee3}
+.teacher{
+  margin-top:30px;display:inline-flex;align-items:center;gap:12px;
+  background:#fff;color:#0a4a3d;border-radius:999px;padding:8px 22px 8px 12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+}
+.teacher .badge{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#f6c84f,#e5ae3a);font-size:22px;
+}
+.teacher span{display:block;line-height:1.3;text-align:right}
+.teacher span small{display:block;font-size:13px;color:#58685f}
+.teacher span b{font-size:19px}
+
+/* ---------- reflection ---------- */
+.section-title{
+  text-align:center;margin:54px 0 8px;font-family:"Amiri",serif;font-size:clamp(30px,6vw,42px);color:var(--emerald);
+}
+.section-lead{text-align:center;color:var(--muted);margin:0 auto 30px;max-width:560px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .section-title{color:var(--c1)}}
+:root[data-theme="dark"] .section-title{color:var(--c1)}
+
+.item{
+  --c:var(--c1);--cs:var(--c1s);
+  background:var(--surface);border-radius:24px;margin:0 0 26px;
+  box-shadow:var(--shadow);border:1px solid var(--line);
+  border-right:8px solid var(--c);overflow:hidden;
+}
+.item:nth-of-type(1){--c:var(--c1);--cs:var(--c1s)}
+.item:nth-of-type(2){--c:var(--c2);--cs:var(--c2s)}
+.item:nth-of-type(3){--c:var(--c3);--cs:var(--c3s)}
+.item:nth-of-type(4){--c:var(--c4);--cs:var(--c4s)}
+.item:nth-of-type(5){--c:var(--c5);--cs:var(--c5s)}
+.item:nth-of-type(6){--c:var(--c6);--cs:var(--c6s)}
+.item:nth-of-type(7){--c:var(--c7);--cs:var(--c7s)}
+.item:nth-of-type(8){--c:var(--c1);--cs:var(--c1s)}
+.item header{
+  display:flex;align-items:center;gap:14px;background:var(--cs);padding:16px 20px;
+}
+.item .num{
+  flex:none;width:44px;height:44px;border-radius:50%;background:var(--c);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:20px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .item .num{color:#10201c}}
+:root[data-theme="dark"] .item .num{color:#10201c}
+.item h3{margin:0;font-size:23px;color:var(--c);line-height:1.5}
+.item .body{padding:18px 22px 22px}
+.verse{
+  background:var(--verse-bg);color:var(--verse-ink);
+  border-radius:16px;padding:14px 20px;margin:0 0 16px;
+  font-family:"Amiri",serif;font-size:clamp(21px,4.4vw,26px);line-height:2.1;text-align:center;
+  border:1px dashed var(--gold);
+}
+.verse cite{display:block;font-family:"Tajawal",sans-serif;font-style:normal;font-size:14px;opacity:.8}
+.explain{margin:0}
+.explain b.tag{
+  display:inline-block;background:var(--c);color:#fff;border-radius:8px;padding:0 10px;margin-left:8px;font-size:15px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .explain b.tag{color:#10201c}}
+:root[data-theme="dark"] .explain b.tag{color:#10201c}
+.fruits{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}
+.fruit{
+  background:var(--cs);border-radius:16px;padding:12px 14px;
+}
+.fruit h4{margin:0 0 2px;color:var(--c);font-size:18px}
+.fruit p{margin:0;font-size:16px;line-height:1.7}
+.fruit .v{font-family:"Amiri",serif;font-size:18px;color:var(--verse-ink);background:var(--verse-bg);border-radius:10px;padding:6px 10px;margin-top:8px;line-height:1.9}
+.steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:flex-start;background:var(--cs);border-radius:14px;padding:10px 14px}
+.steps li .ic{font-size:24px;line-height:1.5}
+.steps li p{margin:0}
+.steps li b{color:var(--c)}
+.dua{
+  text-align:center;font-family:"Amiri",serif;font-size:clamp(22px,4.6vw,28px);line-height:2.1;
+  background:linear-gradient(135deg,var(--cs),var(--verse-bg));border-radius:18px;padding:16px 18px;margin:0 0 14px;
+}
+
+/* ---------- quiz ---------- */
+.quiz-band{
+  margin-top:56px;padding:44px 0 70px;
+  background:linear-gradient(180deg,var(--c3s),var(--c4s) 60%,var(--bg));
+}
+.quiz-band .section-title{margin-top:0;color:var(--c3)}
+.card{
+  background:var(--surface);border-radius:26px;box-shadow:var(--shadow);border:1px solid var(--line);
+  padding:22px 22px 26px;
+}
+.progress-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-weight:700;color:var(--muted);font-size:16px}
+.bar{flex:1;height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--c3),var(--c5),var(--gold));transition:width .35s ease}
+.q-text{font-size:clamp(21px,4.6vw,25px);font-weight:800;line-height:1.7;margin:6px 0 18px}
+.opts{display:grid;gap:12px}
+.opt{
+  display:flex;align-items:center;gap:12px;text-align:right;width:100%;
+  font:inherit;font-size:19px;color:var(--ink);cursor:pointer;
+  background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:12px 16px;
+  transition:border-color .15s,background .15s,transform .15s;
+}
+.opt .k{
+  flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--c3s);color:var(--c3);font-weight:800;font-size:16px;
+}
+.opt:hover:not(:disabled){border-color:var(--c3);transform:translateX(-3px)}
+.opt:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--good-s);border-color:var(--good)}
+.opt.correct .k{background:var(--good);color:#fff}
+.opt.wrong{background:var(--bad-s);border-color:var(--bad)}
+.opt.wrong .k{background:var(--bad);color:#fff}
+.feedback{
+  margin-top:16px;border-radius:16px;padding:12px 16px;font-size:17px;line-height:1.8;display:none;
+}
+.feedback.show{display:block}
+.feedback.ok{background:var(--good-s);color:var(--good)}
+.feedback.no{background:var(--bad-s);color:var(--bad)}
+.feedback b{display:block;font-size:18px}
+.feedback span{color:var(--ink)}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.btn{
+  font:inherit;font-weight:800;font-size:18px;border:none;cursor:pointer;
+  border-radius:999px;padding:11px 30px;color:#fff;
+  background:linear-gradient(135deg,var(--emerald),#14a07f);
+  box-shadow:0 8px 18px rgba(14,107,87,.28);
+}
+.btn:hover{filter:brightness(1.07)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn.ghost{background:var(--surface);color:var(--emerald);border:2px solid var(--emerald);box-shadow:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.ghost{color:var(--c1);border-color:var(--c1)}}
+:root[data-theme="dark"] .btn.ghost{color:var(--c1);border-color:var(--c1)}
+.score-live{font-size:16px;color:var(--muted)}
+
+/* result */
+.result{text-align:center}
+.ring{position:relative;width:180px;height:180px;margin:6px auto 12px}
+.ring svg{width:100%;height:100%;transform:rotate(90deg) scaleX(-1)}
+.ring .track{stroke:var(--line)}
+.ring .val{stroke:url(#g);transition:stroke-dashoffset 1s ease}
+.ring .center{position:absolute;inset:0;display:grid;place-content:center;line-height:1.2}
+.ring .center b{font-size:46px;font-weight:800;color:var(--c3)}
+.ring .center small{font-size:15px;color:var(--muted)}
+.result h3{font-family:"Amiri",serif;font-size:32px;margin:6px 0}
+.result p.msg{color:var(--muted);margin:0 auto 18px;max-width:520px}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.stat{border-radius:16px;padding:8px 20px;font-weight:800;font-size:18px}
+.stat.g{background:var(--good-s);color:var(--good)}
+.stat.b{background:var(--bad-s);color:var(--bad)}
+.review{text-align:right;margin-top:22px;display:grid;gap:10px}
+.review h4{margin:0 0 4px;font-size:20px;color:var(--c5)}
+.rev{border-radius:14px;padding:10px 14px;background:var(--c5s);font-size:16.5px;line-height:1.75}
+.rev b{display:block}
+.rev .ans{color:var(--good);font-weight:700}
+.hidden{display:none !important}
+
+footer{text-align:center;padding:26px 18px 40px;color:var(--muted);font-size:16px}
+footer b{color:var(--emerald)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) footer b{color:var(--c1)}}
+:root[data-theme="dark"] footer b{color:var(--c1)}
+
+/* ---------- iPhone / small screens ---------- */
+@media (max-width: 700px){
+  html{
+    width:100%;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  body{
+    width:100%;
+    min-width:0;
+    overflow-x:hidden;
+    font-size:17px;
+    line-height:1.8;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  nav{
+    top:0;
+    padding-top:env(safe-area-inset-top, 0px);
+  }
+
+  nav .wrap{
+    min-height:52px;
+    padding-top:6px;
+    padding-bottom:6px;
+    gap:6px;
+  }
+
+  nav .links{
+    min-width:0;
+    flex:1 1 auto;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  nav .links::-webkit-scrollbar{
+    display:none;
+  }
+
+  nav a{
+    font-size:14px;
+    padding:7px 11px;
+    flex:0 0 auto;
+  }
+
+  .theme-btn{
+    width:36px;
+    height:36px;
+  }
+
+  .hero{
+    padding:38px 14px 48px;
+  }
+
+  .bismillah{
+    font-size:22px;
+  }
+
+  .hero h1{
+    font-size:clamp(36px,11vw,54px);
+  }
+
+  .hero .sub{
+    font-size:17px;
+    max-width:100%;
+  }
+
+  .ayah-hero{
+    display:block;
+    width:100%;
+    max-width:100%;
+    margin-top:20px;
+    padding:12px 12px;
+    font-size:clamp(20px,6vw,27px);
+    overflow-wrap:anywhere;
+  }
+
+  .teacher{
+    max-width:100%;
+    padding:7px 16px 7px 9px;
+  }
+
+  .teacher span b{
+    font-size:17px;
+  }
+
+  .section-title{
+    margin-top:38px;
+    font-size:32px;
+  }
+
+  .section-lead{
+    font-size:16px;
+    margin-bottom:22px;
+  }
+
+  .item{
+    border-right-width:6px;
+    border-radius:18px;
+    margin-bottom:18px;
+  }
+
+  .item header{
+    padding:12px 13px;
+    gap:10px;
+  }
+
+  .item .num{
+    width:38px;
+    height:38px;
+    font-size:17px;
+  }
+
+  .item h3{
+    font-size:19px;
+    line-height:1.45;
+  }
+
+  .item .body{
+    padding:13px 13px 17px;
+  }
+
+  .verse{
+    padding:11px 10px;
+    font-size:20px;
+    line-height:1.95;
+    overflow-wrap:anywhere;
+  }
+
+  .explain{
+    font-size:16.5px;
+    overflow-wrap:anywhere;
+  }
+
+  .fruits{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .fruit{
+    padding:11px 12px;
+  }
+
+  .fruit h4{
+    font-size:17px;
+  }
+
+  .fruit p{
+    font-size:15.5px;
+  }
+
+  .fruit .v{
+    font-size:17px;
+    overflow-wrap:anywhere;
+  }
+
+  .steps li{
+    gap:8px;
+    padding:9px 10px;
+  }
+
+  .steps li .ic{
+    font-size:21px;
+    flex:0 0 auto;
+  }
+
+  .steps li p{
+    font-size:15.5px;
+  }
+
+  .quiz-band{
+    margin-top:38px;
+    padding:34px 0 48px;
+  }
+
+  .card{
+    padding:14px 11px 18px;
+    border-radius:19px;
+  }
+
+  .progress-row{
+    gap:7px;
+    font-size:14px;
+    flex-wrap:wrap;
+  }
+
+  .bar{
+    min-width:70px;
+  }
+
+  .q-text{
+    font-size:19px;
+    line-height:1.65;
+  }
+
+  .opts{
+    gap:9px;
+  }
+
+  .opt{
+    font-size:16px;
+    line-height:1.55;
+    padding:11px 10px;
+    gap:8px;
+    text-align:right;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+
+  .opt .k{
+    width:31px;
+    height:31px;
+    font-size:15px;
+  }
+
+  .actions{
+    gap:8px;
+  }
+
+  .btn{
+    min-height:46px;
+    padding:10px 20px;
+    font-size:16px;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .ring{
+    width:155px;
+    height:155px;
+  }
+
+  .ring .center b{
+    font-size:40px;
+  }
+
+  .result h3{
+    font-size:28px;
+  }
+
+  .rev{
+    font-size:15px;
+  }
+
+  footer{
+    padding:22px 14px calc(30px + env(safe-area-inset-bottom, 0px));
+    font-size:14px;
+  }
+}
+
+@media (max-width:380px){
+  nav a{
+    font-size:13px;
+    padding:6px 9px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .item h3{
+    font-size:18px;
+  }
+
+  .ayah-hero{
+    font-size:19px;
+  }
+
+  .actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .actions .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="links">
+      <a href="#top">الوقفة</a>
+      <a href="#items">العناصر</a>
+      <a href="#quiz" class="quiz-link">ابدئي الاختبار</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="تبديل الوضع الليلي">🌙</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="bismillah">بسم الله الرحمن الرحيم</p>
+  <h1>أهمية تقوى الله</h1>
+  <p class="sub">وقفة إيمانية نتعرّف فيها على معنى التقوى، وثمارها، وكيف نحققها في حياتنا</p>
+  <div class="ayah-hero">
+    ﴿إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ﴾
+    <small>سورة الحجرات – الآية 13</small>
+  </div>
+  <br>
+  <div class="teacher">
+    <div class="badge">🌙</div>
+    <span><small>إعداد المعلمة</small><b>أمل بايونس</b></span>
+  </div>
+</header>
+
+<main class="wrap" id="items">
+  <h2 class="section-title">عناصر الوقفة</h2>
+  <p class="section-lead">ثمانية عناصر، ومع كل عنصر شرح مبسّط يسهّل الفهم والحفظ</p>
+
+  <!-- 1 -->
+  <section class="item">
+    <header><div class="num">1</div><h3>معنى التقوى</h3></header>
+    <div class="body">
+      <div class="verse">﴿يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ﴾<cite>آل عمران: 102</cite></div>
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        التقوى أن تجعل بينك وبين غضب الله وعذابه <b>وقاية</b>، وذلك بأن تفعل ما أمرك الله به وتترك ما نهاك عنه، وأنت تحب الله وتخشاه وتراقبه في السر والعلن. فهي ليست كلمة تُقال، بل سلوك وعمل يظهر في حياتنا كل يوم.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="item">
+    <header><div class="num">2</div><h3>التقوى وصية الله لجميع الناس</h3></header>
+    <div class="body">
+      <div class="verse">﴿وَلَقَدْ وَصَّيْنَا الَّذِينَ أُوتُوا الْكِتَابَ مِن قَبْلِكُمْ وَإِيَّاكُمْ أَنِ اتَّقُوا اللَّهَ﴾<cite>النساء: 131</cite></div>
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        الوصية تكون في الأمر المهم جدًا. وقد أوصى الله بالتقوى الأمم السابقة وأوصانا بها نحن أيضًا، فهي أساس كل دين وجامعة كل خير، وما من نبي إلا دعا قومه إليها.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="item">
+    <header><div class="num">3</div><h3>التقوى خير زاد</h3></header>
+    <div class="body">
+      <div class="verse">﴿وَتَزَوَّدُوا فَإِنَّ خَيْرَ الزَّادِ التَّقْوَىٰ﴾<cite>البقرة: 197</cite></div>
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        المسافر يحتاج إلى زاد يوصله، ونحن مسافرون إلى الله والدار الآخرة. وأفضل ما نحمله في هذه الرحلة ليس المال ولا الجاه، بل <b>التقوى</b> والعمل الصالح، فهي التي تنفعنا يوم لا ينفع مال ولا بنون.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="item">
+    <header><div class="num">4</div><h3>التقوى ميزان التفاضل</h3></header>
+    <div class="body">
+      <div class="verse">﴿إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ﴾<cite>الحجرات: 13</cite></div>
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        الناس يتفاضلون عند الله بتقواهم لا بأشكالهم ولا أموالهم ولا أنسابهم ولا ألوانهم. فقد يكون إنسان بسيط الحال وهو أكرم الناس عند الله لأنه أتقاهم. وفي هذا راحة لقلوبنا وعدل في الميزان.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="item">
+    <header><div class="num">5</div><h3>ثمار التقوى في الدنيا</h3></header>
+    <div class="body">
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        من اتقى الله أكرمه في دنياه بخيرات كثيرة، منها:</p>
+      <div class="fruits">
+        <div class="fruit"><h4>🚪 مخرج من كل ضيق</h4><p>إذا ضاقت عليك الأمور فتح الله لك بابًا للفرج.</p>
+          <div class="v">﴿وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا﴾ [الطلاق: 2]</div></div>
+        <div class="fruit"><h4>💰 رزق من حيث لا تتوقع</h4><p>يأتيك الرزق من طريق لم تكن تحسب له حسابًا.</p>
+          <div class="v">﴿وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ﴾ [الطلاق: 3]</div></div>
+        <div class="fruit"><h4>🌿 تيسير الأمور</h4><p>تصبح أمورك أسهل وهمومك أخف بإذن الله.</p>
+          <div class="v">﴿يَجْعَل لَّهُ مِنْ أَمْرِهِ يُسْرًا﴾ [الطلاق: 4]</div></div>
+        <div class="fruit"><h4>💡 فرقان ونور</h4><p>يرزقك الله بصيرة تفرّقين بها بين الحق والباطل.</p>
+          <div class="v">﴿إِن تَتَّقُوا اللَّهَ يَجْعَل لَّكُمْ فُرْقَانًا﴾ [الأنفال: 29]</div></div>
+        <div class="fruit"><h4>✨ بركات من السماء والأرض</h4><p>تكثر البركة في الوقت والمال والصحة والأهل.</p>
+          <div class="v">﴿لَفَتَحْنَا عَلَيْهِم بَرَكَاتٍ مِّنَ السَّمَاءِ وَالْأَرْضِ﴾ [الأعراف: 96]</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="item">
+    <header><div class="num">6</div><h3>ثمار التقوى في الآخرة</h3></header>
+    <div class="body">
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        وأعظم من ثمار الدنيا ما أعدّه الله للمتقين عنده:</p>
+      <div class="fruits">
+        <div class="fruit"><h4>❤️ محبة الله</h4><p>يحب الله عباده المتقين، وما أعظمها من منزلة.</p>
+          <div class="v">﴿إِنَّ اللَّهَ يُحِبُّ الْمُتَّقِينَ﴾ [التوبة: 4]</div></div>
+        <div class="fruit"><h4>🤝 معية الله</h4><p>يكون الله معهم بالنصر والتأييد والحفظ.</p>
+          <div class="v">﴿إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا﴾ [النحل: 128]</div></div>
+        <div class="fruit"><h4>🧺 تكفير السيئات</h4><p>يمحو الله عنهم الذنوب ويعظّم لهم الأجر.</p>
+          <div class="v">﴿يُكَفِّرْ عَنْهُ سَيِّئَاتِهِ وَيُعْظِمْ لَهُ أَجْرًا﴾ [الطلاق: 5]</div></div>
+        <div class="fruit"><h4>🌸 الجنة</h4><p>الجنة هي الدار التي أعدّها الله لعباده المتقين.</p>
+          <div class="v">﴿تِلْكَ الْجَنَّةُ الَّتِي نُورِثُ مِنْ عِبَادِنَا مَن كَانَ تَقِيًّا﴾ [مريم: 63]</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="item">
+    <header><div class="num">7</div><h3>كيف نحقق التقوى؟</h3></header>
+    <div class="body">
+      <div class="verse">«اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ»<cite>رواه الترمذي وحسّنه</cite></div>
+      <p class="explain"><b class="tag">الشرح المبسط</b>
+        التقوى تُبنى خطوة خطوة، ومن أهم الطرق إليها:</p>
+      <ul class="steps">
+        <li><span class="ic">👁️</span><p><b>مراقبة الله:</b> أن تستحضري أن الله يراك في كل مكان، حتى وأنتِ وحدك.</p></li>
+        <li><span class="ic">🕌</span><p><b>المحافظة على الفرائض:</b> كالصلاة في وقتها، ثم الإكثار من النوافل.</p></li>
+        <li><span class="ic">🚫</span><p><b>الابتعاد عن المحرمات:</b> وعن الأماكن والأسباب التي توصل إليها.</p></li>
+        <li><span class="ic">🪞</span><p><b>محاسبة النفس:</b> أن نسأل أنفسنا كل يوم: ماذا قدّمت لآخرتي؟</p></li>
+        <li><span class="ic">🤲</span><p><b>التوبة السريعة:</b> إذا أخطأنا نتبع السيئة بحسنة ونرجع إلى الله.</p></li>
+        <li><span class="ic">👭</span><p><b>صحبة الصالحات:</b> فالصديقة الطيبة تعين على الخير وتذكّر بالله.</p></li>
+        <li><span class="ic">📖</span><p><b>العلم بالله وقراءة القرآن:</b> فمن عرف ربه خافه وأحبه أكثر.</p></li>
+      </ul>
+      <p class="explain" style="margin-top:14px"><b class="tag">تنبيه</b>
+        مكان التقوى <b>القلب</b>؛ قال النبي ﷺ: «التَّقْوَى هَا هُنَا» وأشار إلى صدره (رواه مسلم). فإذا صلح القلب صلحت الأعمال كلها.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="item">
+    <header><div class="num">8</div><h3>خاتمة ودعاء</h3></header>
+    <div class="body">
+      <div class="dua">«اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى»<br><small style="font-family:Tajawal,sans-serif;font-size:14px;color:var(--muted)">رواه مسلم</small></div>
+      <p class="explain"><b class="tag">الخلاصة</b>
+        التقوى هي أن نعيش وفي قلوبنا مراقبة لله. هي وصية الله لنا، وخير زادنا، وميزان كرامتنا عنده، وبها نحصل على خير الدنيا والآخرة. فلنجعلها منهج حياتنا، ولنبدأ من اليوم بخطوة صغيرة نقرّب بها أنفسنا من الله.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ================= QUIZ ================= -->
+<div class="quiz-band" id="quiz">
+  <div class="wrap">
+    <h2 class="section-title">اختبري نفسك</h2>
+    <p class="section-lead">15 سؤالًا من الوقفة. اختاري الإجابة وستظهر لك الإجابة الصحيحة مع التوضيح، وفي النهاية تظهر نتيجتك.</p>
+
+    <div class="card" id="quizCard">
+      <div id="qView">
+        <div class="progress-row">
+          <span id="qCount">السؤال 1 من 15</span>
+          <div class="bar"><i id="barFill"></i></div>
+          <span class="score-live" id="liveScore">⭐ 0</span>
+        </div>
+        <div class="q-text" id="qText"></div>
+        <div class="opts" id="opts"></div>
+        <div class="feedback" id="fb" role="status" aria-live="polite"></div>
+        <div class="actions">
+          <span></span>
+          <button class="btn" id="nextBtn" disabled>التالي</button>
+        </div>
+      </div>
+
+      <div class="result hidden" id="resView">
+        <div class="ring">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6d28d9"/>
+                <stop offset="55%" stop-color="#be185d"/>
+                <stop offset="100%" stop-color="#e5ae3a"/>
+              </linearGradient>
+            </defs>
+            <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="12"/>
+            <circle class="val" id="ringVal" cx="60" cy="60" r="52" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="center"><b id="resNum">0</b><small>من 15</small></div>
+        </div>
+        <h3 id="resTitle"></h3>
+        <p class="msg" id="resMsg"></p>
+        <div class="stats">
+          <div class="stat g" id="stG"></div>
+          <div class="stat b" id="stB"></div>
+        </div>
+        <div class="actions" style="justify-content:center;flex-wrap:wrap">
+          <button class="btn" id="againBtn">أعيدي الاختبار</button>
+          <a class="btn ghost" href="#items" style="text-decoration:none">راجعي الوقفة</a>
+        </div>
+        <div class="review" id="review"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  وقفة عن أهمية تقوى الله · إعداد المعلمة <b>أمل بايونس</b><br>
+  نسأل الله أن ينفعنا بما علّمنا وأن يرزقنا التقوى
+</footer>
+
+<script>
+(function(){
+  /* theme toggle */
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  function isDark(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t==='dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paintBtn(){ btn.textContent=isDark()?'☀️':'🌙'; }
+  paintBtn();
+  btn.addEventListener('click',function(){
+    root.setAttribute('data-theme',isDark()?'light':'dark'); paintBtn();
+  });
+
+  /* quiz data: a = index of correct option */
+  var Q=[
+    {q:"ما معنى التقوى؟",
+     o:["كثرة الكلام في أمور الدين","أن تجعل بينك وبين عذاب الله وقاية بفعل الأوامر وترك النواهي","ترك الدنيا والابتعاد عن الناس","لبس الثياب الخشنة"],
+     a:1,e:"التقوى هي امتثال أوامر الله واجتناب نواهيه خوفًا منه ومحبة له."},
+    {q:"حسب قوله تعالى: ﴿إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ﴾، من هو أكرم الناس عند الله؟",
+     o:["أغناهم","أقواهم","أتقاهم","أكثرهم أتباعًا"],
+     a:2,e:"الكرامة عند الله بالتقوى لا بالمال ولا بالقوة ولا بالنسب."},
+    {q:"ما هو خير الزاد كما في سورة البقرة؟",
+     o:["التقوى","المال","الصحة","العلم الدنيوي"],
+     a:0,e:"قال تعالى: ﴿وَتَزَوَّدُوا فَإِنَّ خَيْرَ الزَّادِ التَّقْوَىٰ﴾."},
+    {q:"ماذا يعني ﴿يَجْعَل لَّهُ مَخْرَجًا﴾ لمن اتقى الله؟",
+     o:["يخرج من بلده","يخرج من المدرسة","يخرج من الصلاة","يجعل الله له فرجًا وخلاصًا من كل ضيق"],
+     a:3,e:"المخرج هو الفرج والحل من الشدائد والضيق."},
+    {q:"في أي سورة جاء قوله تعالى: ﴿وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ﴾؟",
+     o:["سورة البقرة","سورة الطلاق","سورة الإخلاص","سورة الكهف"],
+     a:1,e:"الآيتان في سورة الطلاق (الآية 2 والآية 3)."},
+    {q:"أكملي الحديث: «اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ ...»",
+     o:["الاستغفار فقط","البكاء","الْحَسَنَةَ تَمْحُهَا","الصمت"],
+     a:2,e:"تمام الحديث: «وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ»."},
+    {q:"ما معنى الفرقان في قوله تعالى: ﴿إِن تَتَّقُوا اللَّهَ يَجْعَل لَّكُمْ فُرْقَانًا﴾؟",
+     o:["نور وبصيرة تفرّق بين الحق والباطل","كثرة المال","الشهرة بين الناس","الفوز في المسابقات"],
+     a:0,e:"الفرقان هو التمييز بين الحق والباطل بنور يقذفه الله في قلب المتقي."},
+    {q:"ماذا وعد الله أهل القرى إذا آمنوا واتقوا؟",
+     o:["الشهرة","كثرة الأولاد فقط","القوة العسكرية","بركات من السماء والأرض"],
+     a:3,e:"قال تعالى: ﴿لَفَتَحْنَا عَلَيْهِم بَرَكَاتٍ مِّنَ السَّمَاءِ وَالْأَرْضِ﴾."},
+    {q:"ما الذي أعدّه الله للمتقين في الآخرة؟",
+     o:["القصور في الدنيا","الجنة","المال الكثير","الجاه بين الناس"],
+     a:1,e:"﴿تِلْكَ الْجَنَّةُ الَّتِي نُورِثُ مِنْ عِبَادِنَا مَن كَانَ تَقِيًّا﴾."},
+    {q:"أين يكون محل التقوى كما قال النبي ﷺ؟",
+     o:["في اللسان فقط","في الملابس","في القلب","في المال"],
+     a:2,e:"قال ﷺ: «التَّقْوَى هَا هُنَا» وأشار إلى صدره، رواه مسلم."},
+    {q:"أي مما يلي من أعظم وسائل تحقيق التقوى؟",
+     o:["مراقبة الله في السر والعلن","جمع الأموال","كثرة النوم","متابعة المشاهير"],
+     a:0,e:"من راقب الله في سره وعلنه حمله ذلك على الطاعة وترك المعصية."},
+    {q:"أي الأعمال التالية تُعين على التقوى؟",
+     o:["تأجيل التوبة","كثرة الجدال","تضييع الصلاة","محاسبة النفس كل يوم"],
+     a:3,e:"محاسبة النفس تجعل الإنسان يصحح أخطاءه ويزداد من الخير."},
+    {q:"ماذا قال تعالى عن المتقين في قوله: ﴿إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا﴾؟",
+     o:["الله بعيد عنهم","الله معهم بالنصر والتأييد والحفظ","الله يحاسبهم أولًا","لا تأثير للتقوى"],
+     a:1,e:"هي معية خاصة: معية النصر والتأييد والحفظ لأهل التقوى والإحسان."},
+    {q:"أي مما يلي ليس من ثمار التقوى؟",
+     o:["تيسير الأمور","الرزق من حيث لا يحتسب","ضياع البركة","تكفير السيئات"],
+     a:2,e:"التقوى سبب لزيادة البركة وليست سببًا لضياعها."},
+    {q:"لمن أوصى الله بالتقوى في قوله: ﴿وَلَقَدْ وَصَّيْنَا الَّذِينَ أُوتُوا الْكِتَابَ مِن قَبْلِكُمْ وَإِيَّاكُمْ أَنِ اتَّقُوا اللَّهَ﴾؟",
+     o:["للأمم السابقة ولنا جميعًا","للأنبياء فقط","للأغنياء فقط","للرجال فقط"],
+     a:0,e:"التقوى وصية الله للأولين والآخرين، وهي عامة لكل الناس."}
+  ];
+  var LET=["أ","ب","ج","د"];
+  var cur=0, score=0, locked=false, answers=[];
+
+  var $=function(id){return document.getElementById(id)};
+  var qText=$('qText'), opts=$('opts'), fb=$('fb'), nextBtn=$('nextBtn');
+
+  function render(){
+    var it=Q[cur];
+    locked=false;
+    $('qCount').textContent='السؤال '+(cur+1)+' من '+Q.length;
+    $('barFill').style.width=(cur/Q.length*100)+'%';
+    $('liveScore').textContent='⭐ '+score;
+    qText.textContent=it.q;
+    opts.innerHTML='';
+    fb.className='feedback'; fb.innerHTML='';
+    nextBtn.disabled=true;
+    nextBtn.textContent=(cur===Q.length-1)?'عرض النتيجة':'التالي';
+    it.o.forEach(function(t,i){
+      var b=document.createElement('button');
+      b.className='opt'; b.type='button';
+      b.innerHTML='<span class="k">'+LET[i]+'</span><span></span>';
+      b.lastChild.textContent=t;
+      b.addEventListener('click',function(){choose(i)});
+      opts.appendChild(b);
+    });
+  }
+
+  function choose(i){
+    if(locked) return; locked=true;
+    var it=Q[cur], ok=(i===it.a);
+    answers.push(i);
+    if(ok) score++;
+    var bs=opts.querySelectorAll('.opt');
+    bs.forEach(function(b,idx){
+      b.disabled=true;
+      if(idx===it.a) b.classList.add('correct');
+      else if(idx===i) b.classList.add('wrong');
+    });
+    $('liveScore').textContent='⭐ '+score;
+    fb.className='feedback show '+(ok?'ok':'no');
+    fb.innerHTML='<b>'+(ok?'أحسنتِ! إجابة صحيحة ✅':'إجابة غير صحيحة ❌')+'</b><span></span>';
+    fb.lastChild.textContent=(ok?'':'الصحيح: '+it.o[it.a]+'. ')+it.e;
+    nextBtn.disabled=false;
+    nextBtn.focus({preventScroll:true});
+  }
+
+  nextBtn.addEventListener('click',function(){
+    if(cur<Q.length-1){cur++;render();}
+    else showResult();
+  });
+
+  function showResult(){
+    $('qView').classList.add('hidden');
+    $('resView').classList.remove('hidden');
+    var n=Q.length, pct=score/n;
+    $('resNum').textContent=score;
+    $('stG').textContent='✅ صحيحة: '+score;
+    $('stB').textContent='❌ خاطئة: '+(n-score);
+    var t,m;
+    if(score===n){t='ممتازة! 🌟 علامة كاملة';m='ما شاء الله، أتقنتِ الوقفة تمامًا. نسأل الله أن يرزقك التقوى والعمل بما علمتِ.'}
+    else if(pct>=0.8){t='رائع جدًا 🎉';m='مستوى متميز، ومراجعة بسيطة للأسئلة الخاطئة وستصلين إلى العلامة الكاملة.'}
+    else if(pct>=0.6){t='جيد 👍';m='بداية طيبة، راجعي عناصر الوقفة ثم أعيدي الاختبار لتحسني نتيجتك.'}
+    else {t='حاولي مرة أخرى 💪';m='لا بأس، اقرئي الوقفة بتأنٍّ ثم أعيدي الاختبار، وستجدين نفسك أفضل بإذن الله.'}
+    $('resTitle').textContent=t; $('resMsg').textContent=m;
+    $('barFill').style.width='100%';
+    var ring=$('ringVal'), C=326.7;
+    ring.style.strokeDashoffset=C;
+    setTimeout(function(){ring.style.strokeDashoffset=C*(1-pct)},60);
+
+    var rv=$('review'); rv.innerHTML='';
+    var wrong=[];
+    answers.forEach(function(a,i){ if(a!==Q[i].a) wrong.push(i); });
+    if(wrong.length){
+      var h=document.createElement('h4'); h.textContent='راجعي الأسئلة التي أخطأتِ فيها'; rv.appendChild(h);
+      wrong.forEach(function(i){
+        var d=document.createElement('div'); d.className='rev';
+        var b=document.createElement('b'); b.textContent=(i+1)+') '+Q[i].q;
+        var a=document.createElement('span'); a.className='ans'; a.textContent='الإجابة الصحيحة: '+Q[i].o[Q[i].a];
+        var e=document.createElement('div'); e.textContent=Q[i].e;
+        d.appendChild(b); d.appendChild(a); d.appendChild(e); rv.appendChild(d);
+      });
+    }
+    document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  $('againBtn').addEventListener('click',function(){
+    cur=0;score=0;answers=[];
+    $('resView').classList.add('hidden');
+    $('qView').classList.remove('hidden');
+    render();
+    document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
